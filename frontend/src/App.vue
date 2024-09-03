@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <h1>Oliver's Website Critique</h1>
     <SimpleUI />
   </div>
 </template>

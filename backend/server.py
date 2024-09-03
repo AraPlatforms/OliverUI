@@ -15,7 +15,7 @@ app.add_middleware(
     allow_headers=["*"],  # Allows all headers
 )
 
-webpage_critic = WebpageCritique(llm_model='gpt-4o')
+webpage_critic = WebpageCritique(llm_model='gpt-4o-mini')
 
 class CritiqueRequest(BaseModel):
     url: str
