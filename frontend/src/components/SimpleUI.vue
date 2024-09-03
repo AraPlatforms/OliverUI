@@ -125,6 +125,7 @@ h1 {
   padding: 1rem;
   border-radius: 4px;
   margin: 1rem 0;
+  border-left: 4px solid #3498db;
 }
 
 hr {
@@ -189,6 +190,15 @@ button:disabled {
 .reset-button {
   font-size: 0.9em;
   padding: 8px 16px;
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #c0392b;
 }
 
 .markdown-content {
@@ -214,6 +224,7 @@ button:disabled {
 
 .markdown-content p {
   margin-bottom: 1rem;
+  color: #7f8c8d;
 }
 
 .markdown-content ul {
@@ -225,6 +236,7 @@ button:disabled {
   margin-bottom: 0.5rem;
   padding-left: 1.5rem;
   position: relative;
+  color: #34495e;
 }
 
 .markdown-content li::before {
@@ -243,5 +255,32 @@ button:disabled {
 .markdown-content em {
   color: #27ae60;
   font-style: italic;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid #8e44ad;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #8e44ad;
+  font-style: italic;
+}
+
+.markdown-content code {
+  background-color: #f1c40f;
+  color: #2c3e50;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.markdown-content a {
+  color: #3498db;
+  text-decoration: none;
+  border-bottom: 1px dashed #3498db;
+  transition: color 0.3s;
+}
+
+.markdown-content a:hover {
+  color: #2980b9;
 }
 </style>

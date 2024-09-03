@@ -6,7 +6,7 @@ class Prompts:
 As a senior product designer with expertise in modern web design, analyze the given website UI based on the provided image and the site's intent. Provide a focused critique with actionable improvements:
 
 1. Envision an improved iteration of the site based on current design trends, user experience best practices, and principles of good modern web design, while keeping the site's core intent in mind.
-2. Create a list of specific changes to achieve this improved version, considering:
+2. Create a list of 3-5 specific changes to achieve this improved version, considering:
    - Visual hierarchy and information architecture
    - Typography and readability
    - Color scheme and overall aesthetic
@@ -15,29 +15,28 @@ As a senior product designer with expertise in modern web design, analyze the gi
    - Consistency in design language
    - Accessibility and inclusive design
    - Performance and loading speed implications
-3. For each change, provide:
-   - A concise name for the change
-   - A detailed description of the change, including specific design recommendations
-   - The rationale behind the change, referencing relevant design principles or trends
-   - Any potential challenges or considerations for implementation
+3. For each of the changes, provide:
+   - A concise name for the change (max 10 words)
+   - A detailed description of the change, including specific design recommendations (50-100 words)
+   - The rationale behind the change, referencing relevant design principles or trends (30-50 words)
+   - Any potential challenges or considerations for implementation (20-30 words)
 4. Consider the overall coherence of all suggested changes together, ensuring they create a unified and polished user experience that aligns with the site's intent.
 5. Prioritize changes based on potential impact on user experience and brand perception.
 
 Focus on improvements that not only enhance user experience and accessibility but also elevate the overall aesthetic and emotional appeal of the website. Consider how the design can support and enhance the website's core purpose and brand identity as described in the site intent.
-Suggest 3 changes at most to keep the critique focused and actionable.
 
 Output your analysis in the following JSON format:
 
 ```json
 {
-    "design_vision": "Comprehensive description of the envisioned improved website, including key design principles and aesthetic direction",
-    "design_coherence": "Explanation of how all changes work together to create a unified and polished user experience",
+    "design_vision": "Comprehensive description of the envisioned improved website, including key design principles and aesthetic direction (100-150 words)",
+    "design_coherence": "Explanation of how all changes work together to create a unified and polished user experience (50-75 words)",
     "overall_assessment": {
         "score": "Numerical score (e.g., 7.5/10) based on various design factors",
-        "strengths": ["List of areas where the design excels"],
-        "weaknesses": ["List of areas that need improvement"]
+        "strengths": ["List of 3 areas where the design excels"],
+        "weaknesses": ["List of 3 areas that need improvement"]
     },
-    "brand_alignment": "Analysis of how well the design aligns with the brand's identity and target audience",
+    "brand_alignment": "Analysis of how well the design aligns with the brand's identity and target audience (50-75 words)",
     "design_ratings": {
         "visual_appeal": "Rating from 1-10",
         "usability": "Rating from 1-10",
@@ -46,58 +45,22 @@ Output your analysis in the following JSON format:
     },
     "changes": [
         {
-            "name": "Concise name of the change",
-            "description": "Detailed description of the change, including specific design recommendations",
-            "rationale": "Explanation of why this change is beneficial, referencing design principles or trends",
-            "implementation_notes": "Any technical or design considerations for implementation",
+            "name": "Concise name of the change (max 5 words)",
+            "description": "Detailed description of the change, including specific design recommendations (50-100 words)",
+            "rationale": "Explanation of why this change is beneficial, referencing design principles or trends (30-50 words)",
+            "implementation_notes": "Any technical or design considerations for implementation (20-30 words)",
             "priority": "High/Medium/Low",
             "impact_areas": ["User Experience", "Visual Appeal", "Brand Perception", "Accessibility", etc.],
             "before_after": {
-                "before": "Description of the current design element",
-                "after": "Description of how the element would look after implementing the change"
+                "before": "Description of the current design element (20-30 words)",
+                "after": "Description of how the element would look after implementing the change (20-30 words)"
             },
             "estimated_complexity": "Easy/Medium/Hard - estimation of implementation difficulty"
         }
     ]
 }
 ```
-
-Example output (truncated for brevity):
-
-```json
-{
-    "design_vision": "Transform the YouTube Comment Manager into a sleek, efficient, and user-friendly interface that empowers content creators to effectively manage and analyze their community interactions. The redesigned interface will feature a modern, minimalist aesthetic with improved visual hierarchy, intuitive navigation, and enhanced functionality, all while maintaining consistency with YouTube's brand identity.",
-    "design_coherence": "The proposed changes work in unison to create a more professional, efficient, and user-friendly comment management system. The modernized color scheme and enhanced navigation provide a solid foundation, while the redesigned comment cards and improved filtering system offer a more intuitive and powerful way to interact with comments. These changes collectively support the core intent of enabling content creators to efficiently moderate and gain insights from user interactions.",
-    "overall_assessment": {
-        "score": "6.5/10",
-        "strengths": ["Clear layout", "Functionality-focused design"],
-        "weaknesses": ["Outdated color scheme", "Cluttered interface"]
-    },
-    "brand_alignment": "The current design aligns with YouTube's functionality but lacks the modern, sleek feel of their main platform. There's room for improvement in reflecting YouTube's innovative brand identity.",
-    "design_ratings": {
-        "visual_appeal": "5/10",
-        "usability": "7/10",
-        "consistency": "6/10",
-        "innovation": "4/10"
-    },
-    "changes": [
-        {
-            "name": "Modernize color scheme",
-            "description": "Update the color palette to a more professional and less aggressive scheme. Replace the bright red with a softer, more neutral tone (e.g., deep blue or teal) for primary actions and accents. Use a light gray background for better contrast and readability.",
-            "rationale": "The current red is overpowering and can be associated with warnings or errors. A more subdued color scheme will create a calmer, more professional environment for managing comments, aligning better with the tool's purpose of efficient moderation and analysis.",
-            "implementation_notes": "Ensure the new color scheme maintains sufficient contrast ratios for accessibility. Consider using a color like #2196F3 (Material Design Blue) for primary actions, which maintains a connection to YouTube's brand while providing a more professional look.",
-            "priority": "High",
-            "impact_areas": ["Visual Appeal", "Brand Perception", "User Experience"],
-            "before_after": {
-                "before": "Bright red accents on white background, creating high contrast but potentially stressful visual experience",
-                "after": "Softer blue or teal accents on light gray background, offering a more calming and professional appearance while maintaining readability"
-            },
-            "estimated_complexity": "Medium"
-        }
-    ]
-}
-```
-    '''
+'''
     
     ui_critique_inputs = '''
     Given the website UI screenshot (desktop and mobile) provided and description, evaluate the design and propose improvements.
