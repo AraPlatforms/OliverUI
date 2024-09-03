@@ -24,13 +24,7 @@
       </form>
     </div>
     
-    <div v-if="isLoading" class="loading-container">
-      <div class="coffee-mug">
-        <div class="coffee"></div>
-      </div>
-      <p>Oliver is brewing your critique. This usually takes about 20 seconds.</p>
-      <p>He's probably sipping an artisanal coffee while judging your site.</p>
-    </div>
+    <LoadingAnimation v-if="isLoading" />
     
     <div v-else-if="critique" class="critique-container">
       <div class="critique-header">
@@ -46,8 +40,12 @@
 import { ref, computed } from 'vue'
 import axios from 'axios'
 import { marked } from 'marked'
+import LoadingAnimation from './LoadingAnimation.vue'
 
 export default {
+  components: {
+    LoadingAnimation
+  },
   setup() {
     const websiteUrl = ref('')
     const isLoading = ref(false)
@@ -175,50 +173,6 @@ button:hover {
 button:disabled {
   background-color: #bdc3c7;
   cursor: not-allowed;
-}
-
-.loading-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 2rem;
-}
-
-.coffee-mug {
-  width: 100px;
-  height: 80px;
-  background-color: #ffffff;
-  border: 5px solid #34495e;
-  border-radius: 0 0 50px 50px;
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.coffee-mug::before {
-  content: '';
-  position: absolute;
-  right: -20px;
-  top: 15px;
-  width: 25px;
-  height: 40px;
-  border: 5px solid #34495e;
-  border-left: none;
-  border-radius: 0 25px 25px 0;
-}
-
-.coffee {
-  width: 100%;
-  height: 0;
-  background-color: #3498db;
-  position: absolute;
-  bottom: 0;
-  border-radius: 0 0 45px 45px;
-  animation: fill 2s ease-in-out infinite;
-}
-
-@keyframes fill {
-  0%, 100% { height: 0; }
-  50% { height: 70%; }
 }
 
 .critique-container {
