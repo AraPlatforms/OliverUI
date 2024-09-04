@@ -1,86 +1,79 @@
-# Oliver - Your Judgmental UI Design AI 🧔👓
+# Oliver - Your Helpful UI Design AI
+
 ![Oliver](assets/oliver_ui_hero.png)
 
-## Meet Oliver: The Hipster AI Who'll Roast Your UI 🔥
+## Introducing Oliver: The AI That Will Enhance Your UI Design
 
-Ever wished for a brutally honest, slightly condescending, but undeniably brilliant UI designer to critique your website? Say hello to **Oliver** - the Python package that brings the discerning eye of a Brooklyn hipster UI designer right to your codebase.
+**Oliver** is a Python package designed to provide thorough and insightful critiques of your website's UI. With the latest in machine learning, Oliver brings a level of precision and analysis that can help you improve your design efficiently.
 
-### What's Oliver's Deal? 🤔
+### What Does Oliver Do?
 
-Oliver isn't just another run-of-the-mill design critic. He's a sophisticated AI powered by the latest in machine learning, with a dash of artisanal, small-batch sarcasm. Here's what he brings to your digital table:
+Oliver is more than just a design critic; he is an AI that provides valuable feedback to help you refine your UI. Here’s what Oliver offers:
 
-- **Pixel-Perfect Precision**: Oliver scrutinizes every element of your UI with the intensity of someone choosing the perfect pour-over coffee beans.
-- **Trendsetter Perspective**: Get feedback that's so cutting-edge, it's practically bleeding (but in a cool, indie band album cover kind of way).
-- **Actionable Insights**: Because even Oliver knows that criticism without solutions is like a fixie without a custom paint job - pointless.
-- **Structured Output**: Oliver doesn't just rant; he provides structured JSON that's ready for the next step in your design evolution.
+- **Pixel-Perfect Analysis**: Oliver examines every detail of your UI to ensure it meets high design standards.
+- **Trend-Aware Feedback**: Oliver’s suggestions are based on current design trends, ensuring your site stays modern and appealing.
+- **Actionable Insights**: Oliver provides not just critiques but also practical suggestions to enhance your design.
+- **Structured Output**: Oliver delivers his feedback in a well-organized JSON format, making it easy to implement improvements.
 
-## Why Oliver? Because Your UI Deserves Better 💅
+## Why Use Oliver?
 
-Let's face it, your website could use a makeover. And who better to guide you than an AI with an attitude and a man bun? Oliver offers:
+If your website needs a design review, Oliver is here to help. Here’s what you can expect:
 
-- **Detailed Reports**: Long-form critiques that dive deep into your design choices, questioning every pixel like it owes him money.
-- **Real-Time Feedback**: Integrate Oliver into your workflow and get instant critiques. It's like pair programming, but with more sighs and eye-rolls.
-- **Cross-Platform Analysis**: Oliver judges your desktop and mobile designs equally, because discriminating against screen sizes is so last season.
-- **Structured Suggestions**: Get your critique in JSON format, perfect for feeding into other tools or your own custom workflows.
+- **Detailed Reports**: In-depth critiques of your design choices with suggestions for improvement.
+- **Real-Time Feedback**: Integrate Oliver into your workflow to receive instant design critiques.
+- **Cross-Platform Analysis**: Oliver evaluates both desktop and mobile versions of your site.
+- **Structured Suggestions**: Receive Oliver’s feedback in JSON format, perfect for integrating with other tools or workflows.
 
-## How to Unleash Oliver on Your Unsuspecting UI 🚀
+## How to Get Started with Oliver
 
-1. **Install the package**: `pip install oliver` (warning: may cause sudden urges to brew kombucha)
+1. **Install the package**: `pip install oliver`
 2. **Point Oliver at your site**:
    ```python
    from oliver import WebpageCritique
 
-   url = "https://your-soon-to-be-roasted-website.com"
-   description = "An attempt at design that Oliver will surely have opinions about"
+   url = "https://your-website.com"
+   description = "A design critique from Oliver"
    
    critic = WebpageCritique(llm_model='gpt-4o')
-   roast = critic.critique_webpage(url, description)
+   critique = critic.critique_webpage(url, description)
    
-   print(json.dumps(roast, indent=2))  # Brace yourself for Oliver's thoughts
+   print(json.dumps(critique, indent=2))
    ```
 
-## What You'll Get 📊
+## What Oliver Provides
 
-Oliver doesn't just throw around pretentious jargon (well, maybe a little). He provides structured, insightful feedback on your UI:
+Oliver’s feedback is structured and focused on improving your UI:
 
-- **Visual Hierarchy**: "Your call-to-action button is about as noticeable as a vegan at a steakhouse."
-- **Color Scheme**: "This palette is more clashing than a noise rock concert. Let's tone it down, shall we?"
-- **Typography**: "Your font choices are giving me 'ransom note' vibes. Time for an intervention."
-- **Layout**: "This layout is more confusing than a mainstream film plot. Let's streamline."
+- **Visual Hierarchy**: Suggestions on how to make important elements stand out.
+- **Color Scheme**: Recommendations for a cohesive and visually appealing color palette.
+- **Typography**: Advice on font choices to enhance readability and aesthetic appeal.
+- **Layout**: Tips on organizing your layout for better user experience.
 
-And the best part? All of this comes in a neatly structured JSON format, ready for your next move.
+All feedback is provided in a structured JSON format, ready for implementation.
 
-## Why It's Actually Useful 💡
+## Why Oliver is Valuable
 
-Beyond the snark and the laughs, Oliver is a powerful tool for developers and designers:
+Oliver is a powerful tool for developers and designers looking to improve their UI:
 
-- **Instant Feedback**: Catch UI issues early, before they become embarrassing launch-day features.
-- **Consistency Checks**: Oliver ensures your design language is more coherent than a single-origin espresso.
-- **Improved UX**: Turn Oliver's sass into genuinely better user experiences.
-- **Integration-Ready Output**: Oliver's structured feedback is perfect for plugging into your existing tools and workflows.
+- **Instant Feedback**: Identify and address UI issues early in the design process.
+- **Consistency Checks**: Ensure your design language is consistent across all elements.
+- **Improved UX**: Use Oliver’s feedback to create better user experiences.
+- **Integration-Ready Output**: Oliver’s feedback is easily integrated into your existing workflows.
 
-## The Tech Behind the Turtleneck 🧠
+## The Technology Behind Oliver
 
-Oliver isn't just a pretty face with great taste. He's powered by:
+Oliver is powered by:
 
-- **Selenium**: For capturing those high-res screenshots Oliver loves to judge.
-- **GPT-4**: Providing the brains behind the sarcasm.
-- **Computer Vision**: Because Oliver needs to see your design crimes to critique them properly.
+- **Selenium**: Captures high-resolution screenshots for analysis.
+- **GPT-4**: Provides the intelligence behind Oliver’s feedback.
+- **Computer Vision**: Enables Oliver to accurately assess your design.
 
-## Coming Soon: Oliver's Code Makeover 🚧
+## Upcoming Features: Code Generation
 
-Exciting news! Soon, Oliver won't just tell you what's wrong with your UI - he'll fix it for you. That's right, we're working on a feature that will take Oliver's structured output and use it to generate code snippets for implementing his suggestions. 
+We’re working on a new feature where Oliver will not only critique your UI but also generate code snippets to implement his suggestions. This will make it even easier to enhance your design based on Oliver’s feedback.
 
-Imagine: You run Oliver on your site, he gives you his usual snarky feedback, but then he also hands you the CSS and HTML tweaks to make it right. It's like having a hipster UI designer and a coding wizard in one package (man bun included, coding skills optional).
+## Conclusion
 
-Stay tuned for this game-changing feature. Your UI is about to get a makeover, Oliver style.
+Oliver is here to help you create better UIs. Whether you’re a seasoned designer or a developer, Oliver provides valuable insights that can significantly improve your website’s design.
 
-## In Conclusion
-
-Whether you're a seasoned designer looking for a fresh perspective or a developer who thinks Comic Sans is "misunderstood," Oliver is here to set you straight. Get ready for brutally honest, hilariously snarky, and surprisingly insightful UI critiques that'll whip your designs into shape faster than you can say "artisanal cold brew."
-
-So go ahead, give Oliver a try. Your users will thank you (and Oliver will make sure you know it was all his idea).
-
----
-
-Remember, in the world of UI design, it's Oliver's way or the highway. And the highway probably has better kerning.
+Try Oliver today and see the difference in your UI.
