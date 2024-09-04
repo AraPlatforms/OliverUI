@@ -1,34 +1,33 @@
 <template>
   <div class="container">
-    <h1>Oliver's Website Critique</h1>
-    <p class="subtitle">Prepare your UI for a hipster-grade roasting</p>
-    <p class="quote">"I've seen better designs scribbled on napkins at artisanal coffee shops." - Oliver</p>
+    <h1 class="title">Website Design Evaluation</h1>
+    <p class="subtitle">Get insightful feedback on your website's design</p>
     
-    <hr>
+    <blockquote class="quote">
+      "Good design is obvious. Great design is transparent." - Joe Sparano
+    </blockquote>
     
-    <div v-if="!critique">
-      <form @submit.prevent="submitWebsite">
-        <label for="websiteUrl">Enter your soon-to-be-roasted website URL:</label>
-        <div class="input-group">
-          <input
-            id="websiteUrl"
-            v-model="websiteUrl"
-            type="url"
-            required
-            placeholder="https://example.com"
-          >
-          <button type="submit" :disabled="isLoading">
-            {{ isLoading ? 'Brewing critique...' : 'Roast My Website' }}
-          </button>
-        </div>
-      </form>
-    </div>
+    <form @submit.prevent="submitWebsite">
+      <label for="websiteUrl">Enter your website URL for evaluation:</label>
+      <div class="input-group">
+        <input
+          id="websiteUrl"
+          v-model="websiteUrl"
+          type="url"
+          required
+          placeholder="https://example.com"
+        >
+        <button type="submit" :disabled="isLoading">
+          {{ isLoading ? 'Analyzing...' : 'Evaluate My Website' }}
+        </button>
+      </div>
+    </form>
     
     <LoadingAnimation v-if="isLoading" />
     
     <div v-else-if="critique" class="critique-container">
       <div class="critique-header">
-        <h2>Oliver's Verdict</h2>
+        <h2>Design Evaluation Results</h2>
         <button @click="resetForm" class="reset-button">Evaluate Another Site</button>
       </div>
       <div v-html="formattedCritique" class="markdown-content"></div>
@@ -37,7 +36,7 @@
 </template>
 
 <script>
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import axios from 'axios'
 import { marked } from 'marked'
 import LoadingAnimation from './LoadingAnimation.vue'
@@ -64,8 +63,8 @@ export default {
         })
         critique.value = response.data.markdown_report
       } catch (error) {
-        console.error("Error during critique:", error)
-        critique.value = "Oops! It seems Oliver had one too many artisanal coffees. Please try again later."
+        console.error("Error during evaluation:", error)
+        critique.value = "We apologize, but an error occurred during the evaluation process. Please try again later."
       } finally {
         isLoading.value = false
       }
@@ -75,6 +74,10 @@ export default {
       websiteUrl.value = ''
       critique.value = null
     }
+
+    onMounted(() => {
+      document.title = "Website Design Evaluation Tool"
+    })
 
     return {
       websiteUrl,
@@ -89,33 +92,26 @@ export default {
 </script>
 
 <style scoped>
-body {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
+.container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
-  background-color: #f5f5f5;
-}
-
-.container {
-  text-align: center;
+  padding: 2rem;
   background-color: white;
   border-radius: 8px;
-  padding: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
   color: #2c3e50;
-  font-size: 2.5em;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.5rem;
 }
 
 .subtitle {
-  color: #7f8c8d;
-  font-size: 1.2em;
-  margin-top: 0;
+  font-size: 1.25rem;
+  color: #5a6c7d;
+  margin-bottom: 1.5rem;
 }
 
 .quote {
@@ -124,50 +120,47 @@ h1 {
   background-color: #ecf0f1;
   padding: 1rem;
   border-radius: 4px;
-  margin: 1rem 0;
+  margin: 1.5rem 0;
   border-left: 4px solid #3498db;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #eee;
-  margin: 20px 0;
+form {
+  margin-top: 2rem;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+label {
+  display: block;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
 }
 
 .input-group {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: 500px;
-  margin-top: 10px;
+  gap: 1rem;
 }
 
 input {
-  padding: 10px;
-  font-size: 16px;
+  padding: 0.75rem;
+  font-size: 1rem;
   border: 1px solid #bdc3c7;
   border-radius: 4px;
-  margin-bottom: 10px;
+  width: 100%;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 0.75rem 1rem;
   background-color: #3498db;
   color: white;
   border: none;
-  cursor: pointer;
-  font-size: 16px;
   border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
   transition: background-color 0.3s;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   background-color: #2980b9;
 }
 
@@ -177,7 +170,7 @@ button:disabled {
 }
 
 .critique-container {
-  text-align: left;
+  margin-top: 2rem;
 }
 
 .critique-header {
@@ -188,99 +181,20 @@ button:disabled {
 }
 
 .reset-button {
-  font-size: 0.9em;
-  padding: 8px 16px;
-  background-color: #e74c3c;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  background-color: #95a5a6;
 }
 
 .reset-button:hover {
-  background-color: #c0392b;
+  background-color: #7f8c8d;
 }
 
 .markdown-content {
   background-color: #f9f9f9;
   border-radius: 8px;
-  padding: 2rem;
+  padding: 1.5rem;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.markdown-content h1 {
-  font-size: 2em;
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.markdown-content h2 {
-  font-size: 1.5em;
-  color: #34495e;
-  margin-top: 1.5rem;
-}
-
-.markdown-content p {
-  margin-bottom: 1rem;
-  color: #7f8c8d;
-}
-
-.markdown-content ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.markdown-content li {
-  margin-bottom: 0.5rem;
-  padding-left: 1.5rem;
-  position: relative;
-  color: #34495e;
-}
-
-.markdown-content li::before {
-  content: '•';
-  color: #3498db;
-  font-weight: bold;
-  position: absolute;
-  left: 0;
-}
-
-.markdown-content strong {
-  color: #e74c3c;
-  font-weight: 600;
-}
-
-.markdown-content em {
-  color: #27ae60;
-  font-style: italic;
-}
-
-.markdown-content blockquote {
-  border-left: 4px solid #8e44ad;
-  padding-left: 1rem;
-  margin: 1rem 0;
-  color: #8e44ad;
-  font-style: italic;
-}
-
-.markdown-content code {
-  background-color: #f1c40f;
-  color: #2c3e50;
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-family: 'Courier New', Courier, monospace;
-}
-
-.markdown-content a {
-  color: #3498db;
-  text-decoration: none;
-  border-bottom: 1px dashed #3498db;
-  transition: color 0.3s;
-}
-
-.markdown-content a:hover {
-  color: #2980b9;
+  text-align: left;
 }
 </style>

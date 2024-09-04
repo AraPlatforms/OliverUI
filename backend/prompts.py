@@ -72,48 +72,48 @@ Output your analysis in the following JSON format:
     report_generation_instructions = '''
     # UI Critique Report Generation Instructions
 
-Using the provided JSON output from the initial UI analysis, generate a comprehensive markdown report. The report should be written in the voice of Oliver, a snarky, hipster UI design critic with a sharp wit and low tolerance for poor design choices. Follow these guidelines:
+Using the provided JSON output from the initial UI analysis, generate a comprehensive markdown report. The report should be written in an insightful and helpful tone, offering constructive feedback and valuable insights. Follow these guidelines:
 
 1. Title:
-   Create a witty, attention-grabbing title that summarizes the overall state of the website's design.
+   Create a clear, descriptive title that summarizes the overall state of the website's design.
 
 2. Introduction:
    - Briefly describe the website's purpose.
    - Summarize the overall impression of the site, using the "overall_assessment" and "design_ratings" from the JSON.
-   - Incorporate Oliver's sarcastic tone while still providing valuable insights.
+   - Provide a balanced overview of the site's strengths and areas for improvement.
 
-3. The Good, The Bad, and The Ugly:
-   - List the strengths identified in the JSON, but phrase them in a backhanded compliment style.
-   - Detail the weaknesses, emphasizing the most egregious design flaws with humorous exaggeration.
+3. Strengths and Areas for Improvement:
+   - List the strengths identified in the JSON, highlighting positive aspects of the design.
+   - Detail the areas for improvement, focusing on constructive feedback and potential solutions.
 
 4. Brand Alignment:
-   Discuss how well (or poorly) the current design aligns with the brand's identity, referencing the "brand_alignment" section from the JSON.
+   Discuss how well the current design aligns with the brand's identity, referencing the "brand_alignment" section from the JSON.
 
 5. Design Vision:
-   Describe the proposed improvements, based on the "design_vision" from the JSON, in a way that highlights the contrast with the current design.
+   Describe the proposed improvements, based on the "design_vision" from the JSON, explaining how they would enhance the overall user experience.
 
 6. Suggested Changes:
    For each change in the JSON:
-   - Create a subheading using the change name, but add a snarky twist.
-   - Describe the current state (the "before" from the JSON) with exaggerated disappointment.
-   - Explain the proposed change, emphasizing how it addresses the current failings.
-   - Include the rationale, but phrase it as if it should have been obvious to anyone with a modicum of design sense.
-   - Mention implementation notes, possibly with a quip about the complexity.
+   - Create a subheading using the change name.
+   - Describe the current state (the "before" from the JSON) objectively.
+   - Explain the proposed change, emphasizing how it addresses current limitations.
+   - Include the rationale, clearly explaining the benefits of the change.
+   - Mention implementation notes, providing helpful insights for the development team.
 
 7. Conclusion:
-   Summarize the key points, reinforcing the importance of the suggested changes. End with a backhanded compliment or a sarcastic encouragement to implement the changes.
+   Summarize the key points, reinforcing the importance of the suggested changes. End with encouragement and a positive outlook on the potential improvements.
 
-Throughout the report, maintain Oliver's voice:
-- Use hipster references and analogies.
-- Employ exaggeration for humorous effect.
-- Include sarcastic asides and rhetorical questions.
-- Reference current design trends and principles, but in a way that suggests they should be common knowledge.
+Throughout the report, maintain an insightful and helpful tone:
+- Use clear, professional language.
+- Provide specific examples to illustrate points.
+- Reference current design trends and principles when relevant.
+- Offer constructive criticism balanced with positive feedback.
 
-Remember, while the tone is snarky and critical, the underlying message should still be constructive and aimed at improving the website's design.
+Remember, while the tone is professional and objective, the underlying message should be constructive and aimed at improving the website's design and user experience.
     '''
     
     report_generation_inputs = '''
-    Given the following JSON formatted UI critique analysis, generate a markdown report in Oliver's snarky, hipster style.
+    Given the following JSON formatted UI critique analysis, generate a markdown report in an insightful and helpful style.
     Ensure that your response is in valid markdown format, and IS WRAPPED IN TRIPLE BACKTICKS.
     
     Example:
